@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RADS3555521Assignment</title>
+    <title><%= yield(:title) %> | RAD App</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,10 @@
   </head>
 
   <body>
+    <%= render 'layouts/header' %>
+    <div class="container">
     <%= yield %>
+    <%= render 'layouts/footer' %>
+    </div>
   </body>
 </html>

@@ -34,7 +34,6 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'font-awesome-rails'
 gem 'bcrypt'
-gem 'heroku', '~> 3.99', '>= 3.99.4'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

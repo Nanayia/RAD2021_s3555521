@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 gem 'rails', '~> 5.1.7'
 
 # Use Puma as the app server

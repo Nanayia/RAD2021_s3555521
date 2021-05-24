@@ -29,8 +29,20 @@ p {
  margin-right: 10px;
  padding-top: 9px;
  font-size: 2.2em;
- color: #fff;
+ color: #FFF;
 }
+
+#logo2 {
+ text-transform: uppercase;
+ font-weight: bold;
+ letter-spacing: -1px;
+ float: left;
+ margin-left: 160px;
+ padding-top: 9px;
+ font-size: 2.2em;
+ color: #FFF;
+}
+
 
 footer {
  margin-top: 45px;
@@ -56,9 +68,7 @@ footer ul li {
  margin-left: 15px;
 }
 
-.center {
- text-align: center;
-}
+
 h1 {
  margin-bottom: 20px;
  font-size: 3em;
@@ -66,20 +76,7 @@ h1 {
  margin-top: 20px;
  text-align: center;
 }
-p {
- font-size: 1.1em;
- line-height: 1.7em;
-}
-#logo {
- text-transform: uppercase;
- font-weight: bold;
- letter-spacing: -1px;
- float: left;
- margin-right: 10px;
- padding-top: 9px;
- font-size: 2.2em;
- color: #fff;
-}
+
 input, textarea, select, .uneditable-input {
  border: 1px solid #7FB8EA;
  width: 100%;
@@ -106,3 +103,29 @@ input {
  color: $state-danger-text;
  } 
  }
+ 
+ body{
+  padding-top:100px;
+ }
+ 
+ .checkbox {
+ margin-top: -10px;
+ margin-bottom: 10px;
+ 
+ span {
+ margin-left: 20px;
+ font-weight: normal;
+ }
+ }
+ 
+#session_remember_me {
+ width: auto;
+ margin-left: 0; 
+ 
+}
+
+.carousel-inner > .item > img {
+      width:100%; /* Or try to use important */
+      height:500px;
+    }
+    

@@ -1,0 +1,15 @@
+<% provide(:title, 'newsletter') %>
+<div class="center jumbotron">
+<h1>subscribe</h1>
+<div class="row">
+ <div class="col-md-6 col-md-offset-3">
+<%= form_for @newsletter do |form| %>
+<%= render 'shared/error_email' %>
+<%= form.label :email %>
+<%= form.email_field :email, id: :newsletter_email , :style => "width:400px" %>
+<%= form.submit 'subscribe' , :style => "width:100px"%>
+</div>
+<% end %>
+ </div>
+</div>
+</div>

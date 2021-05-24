@@ -1,0 +1,22 @@
+<% provide(:title, "Save List") %>
+<div class="center jumbotron">
+
+<h1>Saved List</h1>
+
+<div class="container">
+    <% @saved.each do |s| %>
+    <div class="row" style="margin-top:30px">
+    <div class="col-xs-6" >
+    <%= link_to image_tag(Product.find(s.product_id).image1), Product.find(s.product_id) %>
+    </div>
+    <div class="col-xs-6">
+        <p><%= Product.find(s.product_id).name %></p>
+        <h2>type: <%= Product.find(s.product_id).typefor %></h2>
+        <h2>Price: $<%= Product.find(s.product_id).price %></h2>
+        <h2>popular: <%= Product.find(s.product_id).popular %></h2>
+        <h3><%= link_to 'Destroy', s, method: :delete %></3>
+    </div>
+    </div>
+    <% end %>
+</div>
+</div>

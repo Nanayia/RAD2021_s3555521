@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Shoppingbags</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Customer</th>
+      <th>Product name</th>
+      <th>Product price</th>
+      <th>Color</th>
+      <th>Size</th>
+      <th>Quantity</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shoppingbags.each do |shoppingbag| %>
+      <tr>
+        <td><%= shoppingbag.customer_id %></td>
+        <td><%= shoppingbag.product_name %></td>
+        <td><%= shoppingbag.product_price %></td>
+        <td><%= shoppingbag.color %></td>
+        <td><%= shoppingbag.size %></td>
+        <td><%= shoppingbag.quantity %></td>
+        <td><%= link_to 'Show', shoppingbag %></td>
+        <td><%= link_to 'Edit', edit_shoppingbag_path(shoppingbag) %></td>
+        <td><%= link_to 'Destroy', shoppingbag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Shoppingbag', new_shoppingbag_path %>

@@ -1,5 +1,12 @@
+
+
 <% provide(:title, @customer.username) %>
-<h1>
+<div class="center jumbotron">
+<h3>
  <%= gravatar_for @customer %>
  <%= @customer.username %>
-</h1>
+</h3>
+<h3><%= link_to "Pending orders", '/shoppingbag' %></h3>
+<h3><%= link_to "update login details", edit_customer_path(current_customer) %> </h3>
+<h3><%= link_to "subscribe", {:controller => "newsletters", :action => "new"} %></h3>
+</div>

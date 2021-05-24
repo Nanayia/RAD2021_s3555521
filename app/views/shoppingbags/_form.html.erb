@@ -1,0 +1,52 @@
+<%= form_with(model: shoppingbag, local: true) do |form| %>
+  <% if shoppingbag.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(shoppingbag.errors.count, "error") %> prohibited this shoppingbag from being saved:</h2>
+
+      <ul>
+      <% shoppingbag.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :customer_id %>
+    <%= form.number_field :customer_id, id: :shoppingbag_customer_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :product_name %>
+    <%= form.text_field :product_name, id: :shoppingbag_product_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :product_price %>
+    <%= form.text_field :product_price, id: :shoppingbag_product_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :color %>
+    <%= form.text_field :color, id: :shoppingbag_color %>
+  </div>
+
+  <div class="field">
+    <%= form.label :size %>
+    <%= form.text_field :size, id: :shoppingbag_size %>
+  </div>
+
+  <div class="field">
+    <%= form.label :quantity %>
+    <%= form.text_field :quantity, id: :shoppingbag_quantity %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :product_image %>
+    <%= form.text_field :product_image, id: :shoppingbag_product_image %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

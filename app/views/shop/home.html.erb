@@ -1,6 +1,112 @@
+<% provide(:title, "home") %>
 <div class="center jumbotron">
- <h1>This is the home page for RAD.</h1>
- <h2>Welcome to RAD 2021
- <a href="https://www.rmit.edu.au/"> Visit me here</a> </h2>
- <p><%= link_to "Login now!", '#', class: "btn btn-lg btn-primary" %></p>
+<div class="container">
+<div class="row" >
+<div class="col-xs-12">
+<%= link_to image_tag(@sample.image1), @sample %>
+</div>
+</div>
+</div>
+
+<div class="container">
+<div class="row" >
+<div class="col-xs-8">
+<p><%= @sample.name %></p>
+<p><%= @sample.price %></p>
+</div>
+
+<div class="col-xs-3">
+<%= form_for @saved do |form| %>
+  <div class="field">
+    <%= form.number_field :product_id, id: :saved_product_i, :value => @sample.id, :style => "display:none" %>
+  </div>
+    <div class="actions">
+    <%= form.submit 'save' %>
+  </div>
+<% end %>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div class="center jumbotron">
+<div class="container" style= "padding-top:50px;">
+<div class="row" >
+<div class="col-xs-6">
+<h1>Popular</h1>
+</div>
+<div class="col-xs-6" style= "padding-top:50px; font-size:30px"><%= link_to "see all+",  {:controller => "shop", :action => "all"} %>
+</div>
+</div>
+</div>
+
+
+<div class="container" style= "padding-top:50px;" >
+ <div class="row" >
+        <% @popular.each do |product| %>
+      <div class="col-xs-6 col-sm-3">
+        <%= link_to image_tag(product.image1), product %>
+            <p><%= product.name %></p>
+            <p>$<%= product.price %></p>
+        </div>
+          <% end %>
+    </div>
+</div>
+</div>
+
+<div class="center jumbotron">
+<div class="container" style= "padding-top:50px;">
+<div class="row" >
+<div class="col-xs-6">
+<h1>Collection</h1>
+</div>
+<div class="col-xs-6" style= "padding-top:50px; font-size:30px"><%= link_to "see all+",  {:controller => "shop", :action => "all"} %>
+</div>
+</div>
+</div>
+
+
+<div class="container" style= "padding-top:50px;" >
+ <div class="row" >
+      <div class="col-xs-6 col-sm-3">
+        <%= link_to image_tag("banner"), {:controller => "shop", :action => "women"} %>
+        <p>women</p>
+        </div>
+        <div class="col-xs-6 col-sm-3">
+        <%= link_to image_tag("banner"), {:controller => "shop", :action => "men"} %>
+        <p>men</p>
+        </div>
+        <div class="col-xs-6 col-sm-3">
+        <%= link_to image_tag("banner"), {:controller => "shop", :action => "kids"} %>
+        <p>kids</p>
+        </div>
+        <div class="col-xs-6 col-sm-3">
+        <%= link_to image_tag("banner"), {:controller => "shop", :action => "new_in"} %>
+        <p>New-ins</p>
+        </div>
+        
+    </div>
+</div>
+</div>
+
+<div class="center jumbotron">
+<div class="container">
+<div class="row" >
+
+
+<%= form_for @newsletter do |form| %>
+<%= render 'shared/error_email' %>
+  <div class="field">
+<h1>Newsletter</h1>
+<p>signup with our newsletter</p>
+    <%= form.text_field :email, id: :newsletter_email %>
+  </div>
+    <div class="actions">
+    <%= form.submit 'Confirm' %>
+  </div>
+<% end %>
+</div>
+</div>
 </div>

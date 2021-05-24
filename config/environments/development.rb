@@ -1,5 +1,10 @@
 Rails.application.configure do
   config.force_ssl = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :test
+  host = 's3555521.com'
+  config.action_mailer.default_url_options = { host: host, protocol: 'https' }
+  # local dev host instead
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on

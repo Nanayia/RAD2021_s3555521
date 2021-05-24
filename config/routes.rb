@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+
+  resources :shoppingbags
+  get 'newsletters/new'
+
+  resources :saveds do
+    member do
+      get :new
+      post :new
+    end
+  end
+  resources :products 
+  
+  resources :customers
+  
+  get 'sessions/new'
+
   get 'shop/home'
 
   get 'shop/help'
@@ -20,6 +36,29 @@ Rails.application.routes.draw do
   get 'customers/new'
   get '/signup', to: 'customers#new'
   post '/signup', to: 'customers#create'
-  resources :customers
+  post 'saved/add'
+  
+  get '/saveds', to: 'saveds#index'
+  
+  get '/login', to: 'sessions#new' 
+  post '/login', to: 'sessions#create' 
+  delete '/logout', to: 'sessions#destroy'
+  
+  resources :newsletters
+  
+  post '/add', to: 'saveds#new'
+  
+  get '/save', to: 'saveds#create'
+  post '/save', to: 'saveds#create'
+  
+  get '/newsletters', to: 'newsletters#new'
+  post '/newsletters', to: 'newsletters#create'
+  
+  get '/shoppingbag', to: 'customers#shoppingbag'
+  
+  get '/home', to: "shop#home"
+  
+  
+  root 'shop#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

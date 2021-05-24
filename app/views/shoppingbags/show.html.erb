@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @shoppingbag.customer_id %>
+</p>
+
+<p>
+  <strong>Product name:</strong>
+  <%= @shoppingbag.product_name %>
+</p>
+
+<p>
+  <strong>Product price:</strong>
+  <%= @shoppingbag.product_price %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @shoppingbag.color %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @shoppingbag.size %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @shoppingbag.quantity %>
+</p>
+
+<%= link_to 'Edit', edit_shoppingbag_path(@shoppingbag) %> |
+<%= link_to 'Back', shoppingbags_path %>

@@ -1,0 +1,23 @@
+<% provide(:title, 'Shopping bag') %>
+<div class="center jumbotron">
+<h1>Shoppingbags</h1>
+
+    <div class="container">
+    <% @shoppingbags.each do |shoppingbag| %>
+    <div class="row" style="margin-top:30px" >
+    <div class="col-xs-6">
+    <%= image_tag(shoppingbag.product_image) %>
+    </div>
+    <div class="col-xs-6">
+        <h3>Color<%= shoppingbag.product_name %></h3>
+        <p>$<%= shoppingbag.product_price %></p>
+        <h2>Color:<%= shoppingbag.color %></h2>
+        <h2>Size<%= shoppingbag.size %></h2>
+        <h2>Quantity:<%= shoppingbag.quantity %></h2>
+        <h3><%= link_to 'Delete', shoppingbag, method: :delete, data: { confirm: 'Are you sure?' } %></h3>
+        <h3><%= link_to 'Check out', shoppingbag, method: :delete, data: { confirm: 'Are you sure?' } %></h3>
+    </div>
+    </div>
+    <% end %>
+</div>
+</div>

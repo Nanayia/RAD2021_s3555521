@@ -1,0 +1,57 @@
+<% provide(:title, "Detail") %>
+<div class="center jumbotron">
+<%= image_tag(@product.image1) %>
+<%= image_tag(@product.image2) %>
+<%= image_tag(@product.image3) %>
+
+<div class="container" style="padding-top:30px" >
+ <div class="row" >
+<div class="col-xs-6 col-sm-6">
+<p>
+  <strong>Name:</strong>
+  <%= @product.name %>
+</p>
+
+<p>
+  <strong>Typefor:</strong>
+  <%= @product.typefor %>
+</p>
+
+<p>
+  <strong>Price: $</strong>
+  <%= @product.price %>
+</p>
+
+<p>
+  <strong>Popular:</strong>
+  <%= @product.popular %>
+</p>
+
+<div style="padding-top:15px" >
+<%= form_for @saved do |form| %>
+    <%= form.number_field :product_id, id: :saved_product_i, :value => @product.id, :style => "display:none" %>
+    <%= form.submit 'Save to list' %>
+<% end %>
+</div>
+</div>
+
+      <div class="col-xs-6 col-sm-6">
+<%= form_for @shoppingbag do |form| %>
+<% if logged_in? %>
+    <%= form.number_field :customer_id, id: :shoppingbag_customer_id, :value => @customer.id, :style => "display:none"  %>
+    <%= form.text_field :product_name, id: :shoppingbag_product_name, :value => @product.name, :style => "display:none"  %>
+    <%= form.text_field :product_price, id: :shoppingbag_product_price, :value => @product.price, :style => "display:none"  %>
+    <%= form.text_field :product_image, id: :shoppingbag_product_image , :value => @product.image1, :style => "display:none" %>
+    <%= form.select:color, @color, id: :shoppingbag_color %>
+    <%= form.select:size,@size, id: :shoppingbag_size %>
+    <%= form.label :quantity %>
+    <%= form.number_field :quantity, id: :shoppingbag_quantity %>
+    <%= form.submit 'Add to shopping bag' %>
+    <% else %>
+    <h2>Please login to Add product to shopping bag</h2>
+<% end %>
+<% end %>
+</div>
+</div>
+</div>
+</div>
